@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  npmplus:
+    container_name: npmplus
+    image: docker.io/zoeyvid/npmplus:latest  # oder ghcr.io/zoeyvid/npmplus:latest
+    restart: always
+    network_mode: host
+    volumes:
+      - "/opt/npmplus:/data"
+    environment:
+      - "TZ=Europe/Berlin"           # Zeitzone anpassen
+      - "ACME_EMAIL=youremail.tld"  # ACME/Let's Encrypt E-Mail
